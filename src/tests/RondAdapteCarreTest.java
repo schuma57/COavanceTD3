@@ -7,7 +7,7 @@ import org.junit.After;
 /** 
 * RondAdapteCarre Tester. 
 * 
-* @author <Authors name> 
+* @author <Schuma57>
 * @since <pre>mai 20, 2014</pre> 
 * @version 1.0 
 */ 

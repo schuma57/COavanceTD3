@@ -1,9 +1,6 @@
 package mainpoint;
 
-import designpattern.RondAdapteCarre;
-import designpattern.UserFactory;
-import designpattern.UserIterator;
-import designpattern.UserSingleton;
+import designpattern.*;
 import modele.Carre;
 import modele.Rond;
 import modele.User;
@@ -43,6 +40,12 @@ public class StartClass {
         System.out.println("/nTest de Iterator");
         UserIterator it = new UserIterator();
         it.display();
+
+        System.out.println("/nTest de Facade");
+        ShopFacade facade = new ShopFacade();
+        facade.samsungSale();
+        facade.iphoneSale();
+        facade.nokiaSale();
 
     }
 }
