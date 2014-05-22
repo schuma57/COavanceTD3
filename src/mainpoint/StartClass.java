@@ -42,10 +42,8 @@ public class StartClass {
         it.display();
 
         System.out.println("/nTest de Facade");
-        ShopFacade facade = new ShopFacade();
-        facade.samsungSale();
-        facade.iphoneSale();
-        facade.nokiaSale();
+        ComputerFacade computer = new ComputerFacade();
+        computer.start();
 
     }
 }
