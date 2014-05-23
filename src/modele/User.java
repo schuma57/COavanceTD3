@@ -1,5 +1,10 @@
 package modele;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Observable;
+
 /**
  * Created by schuma on 23/04/14.
  */
@@ -8,7 +13,7 @@ public class User {
     private String prenom;
     private int age;
 
-    public User() {
+    public User(){
     }
 
     public String getNom() {

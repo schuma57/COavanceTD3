@@ -2,6 +2,7 @@ package mainpoint;
 
 import designpattern.*;
 import modele.Carre;
+import modele.Gps;
 import modele.Rond;
 import modele.User;
 
@@ -45,5 +46,12 @@ public class StartClass {
         ComputerFacade computer = new ComputerFacade();
         computer.start();
 
+        System.out.println("/nTest de Observer");
+        Gps g = new Gps();
+        GpsObserver ac = new GpsObserver();
+
+        g.addObserver(ac);
+        g.setMesures("N 39°59°993 / W 123°00°000", 4); //on se deplace
+        g.setMesures("N 37°48°898 / W 124°12°011", 5); //on se deplace
     }
 }
