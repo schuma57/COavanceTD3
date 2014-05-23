@@ -1,10 +1,13 @@
 package mainpoint;
 
+import controler.MainControler;
 import designpattern.*;
+import interfaces.IView;
 import modele.Carre;
 import modele.Gps;
 import modele.Rond;
 import modele.User;
+import views.MainView;
 
 /**
  * Created by schuma on 23/04/14.
@@ -15,9 +18,9 @@ public class StartClass {
         User user1 = new User();
         User user2 = new User();
 
+        System.out.println("\nTest de Singleton");
         boolean usersAreEquals = (user1 == user2);
         System.out.println("Resultat : " + usersAreEquals);
-
 
         User userSingleton = UserSingleton.getInstance();
         User userSingleton2 = UserSingleton.getInstance();
@@ -26,11 +29,12 @@ public class StartClass {
         System.out.println("Resultat : " + usersAreEquals);
         System.out.println("Prenom : " +userSingleton.getPrenom());
 
+        System.out.println("\nTest de Factory");
         UserFactory userFactory = new UserFactory();
         User user = userFactory.getTrueUser();
         System.out.println(user.toString());
 
-        System.out.println();
+        System.out.println("\nTest de Adapter");
         Carre carre = new Carre(5,3);
         carre.dessine();
         Rond rond = new Rond(5,3, 10);
@@ -38,20 +42,25 @@ public class StartClass {
         RondAdapteCarre myNewRond = new RondAdapteCarre(carre);
         myNewRond.dessine();
 
-        System.out.println("/nTest de Iterator");
+        System.out.println("\nTest de Iterator");
         UserIterator it = new UserIterator();
         it.display();
 
-        System.out.println("/nTest de Facade");
+        System.out.println("\nTest de Facade");
         ComputerFacade computer = new ComputerFacade();
         computer.start();
 
-        System.out.println("/nTest de Observer");
+        System.out.println("\nTest de Observer");
         Gps g = new Gps();
         GpsObserver ac = new GpsObserver();
-
         g.addObserver(ac);
         g.setMesures("N 39°59°993 / W 123°00°000", 4); //on se deplace
         g.setMesures("N 37°48°898 / W 124°12°011", 5); //on se deplace
+
+        System.out.println("\nTest de MVC");
+        MainControler controleur = new MainControler();
+        IView maVue = new MainView(controleur);
+        controleur.addVue(maVue);
+        controleur.displayListUser();
     }
 }

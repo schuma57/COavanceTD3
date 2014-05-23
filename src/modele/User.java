@@ -16,6 +16,12 @@ public class User {
     public User(){
     }
 
+    public User(String nom, String prenom, int age){
+        setNom(nom);
+        setPrenom(prenom);
+        setAge(age);
+    }
+
     public String getNom() {
         return nom;
     }
