@@ -1,8 +1,13 @@
 package tests;
 
-import org.junit.Test; 
+import designpattern.GpsObserver;
+import modele.Gps;
+import org.junit.Test;
 import org.junit.Before; 
-import org.junit.After; 
+import org.junit.After;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 /** 
 * GpsObserver Tester. 
@@ -12,13 +17,26 @@ import org.junit.After;
 * @version 1.0 
 */ 
 public class GpsObserverTest {
+    private GpsObserver myObserver;
 
-    /**
-    * Method: update(Observable o, Object obj)
-    */
+    @Before
+    public void setUp(){
+        myObserver = new GpsObserver();
+    }
+
+    @Test
+    public void testObserverIsNotNull() {
+        assertNotNull(myObserver);
+    }
+
     @Test
     public void testUpdate() throws Exception {
-        //TODO: Test goes here...
+        Gps gps = new Gps();
+        gps.addObserver(myObserver);
+        gps.setMesures("N 39°59°993 / W 123°00°000", 4);
+
+        assertEquals("N 39°59°993 / W 123°00°000", gps.getPosition());
+        assertEquals(4, gps.getPrecision());
     }
 
 } 

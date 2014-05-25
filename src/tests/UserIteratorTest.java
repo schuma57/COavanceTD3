@@ -20,17 +20,10 @@ public class UserIteratorTest {
         iter = new UserIterator();
     }
 
-    @After
-    public void after() throws Exception {
-    }
-
-    /**
-    * Method: display()
-    */
     @Test
     public void testDisplay() throws Exception {
         iter.display();
     }
 
 
-} 
+}

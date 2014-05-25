@@ -1,8 +1,12 @@
 package tests;
 
-import org.junit.Test; 
-import org.junit.Before; 
-import org.junit.After; 
+import designpattern.RondAdapteCarre;
+import modele.Carre;
+import modele.Rond;
+import org.junit.Test;
+import org.junit.Before;
+
+import static org.junit.Assert.assertTrue;
 
 /** 
 * RondAdapteCarre Tester. 
@@ -12,49 +16,18 @@ import org.junit.After;
 * @version 1.0 
 */ 
 public class RondAdapteCarreTest { 
+    private RondAdapteCarre myAdapter;
 
     @Before
-    public void before() throws Exception {
+    public void setUp() {
+        Carre carre = new Carre(2,2);
+        assertTrue(carre instanceof Carre);
+        myAdapter = new RondAdapteCarre(carre);
     }
 
-    @After
-    public void after() throws Exception {
-    }
-
-    /**
-    *
-    * Method: getX()
-    *
-    */
-    @Test
-    public void testGetX() throws Exception {
-    //TODO: Test goes here...
-    }
 
     /**
-    *
-    * Method: getY()
-    *
-    */
-    @Test
-    public void testGetY() throws Exception {
-    //TODO: Test goes here...
-    }
-
-    /**
-    *
-    * Method: getRayon()
-    *
-    */
-    @Test
-    public void testGetRayon() throws Exception {
-    //TODO: Test goes here...
-    }
-
-    /**
-    *
     * Method: dessine()
-    *
     */
     @Test
     public void testDessine() throws Exception {
@@ -62,9 +35,7 @@ public class RondAdapteCarreTest {
     }
 
     /**
-    *
     * Method: dessine(int rayon)
-    *
     */
     @Test
     public void testDessineRayon() throws Exception {

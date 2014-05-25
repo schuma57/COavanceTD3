@@ -2,7 +2,9 @@ package tests;
 
 import org.junit.Test; 
 import org.junit.Before; 
-import org.junit.After; 
+import org.junit.After;
+
+import static org.junit.Assert.assertNotNull;
 
 /** 
 * ComputerFacade Tester. 
@@ -11,14 +13,22 @@ import org.junit.After;
 * @since <pre>mai 23, 2014</pre> 
 * @version 1.0 
 */ 
-public class ComputerFacadeTest { 
+public class ComputerFacadeTest {
+    private ComputerFacadeTest myPcFacade;
 
-    /**
-    * Method: start()
-    */
+    @Before
+    public void setUp(){
+        myPcFacade = new ComputerFacadeTest();
+    }
+
+    @Test
+    public void testFacadeIsNotNull() {
+        assertNotNull(myPcFacade);
+    }
+
     @Test
     public void testStart() throws Exception {
-        //TODO: Test goes here...
+        //TODO
     }
 
 } 
